@@ -15,6 +15,12 @@ RUN npm ci --omit=dev && npm cache clean --force
 FROM node:20-alpine AS builder
 WORKDIR /app
 
+# Build-time configuration (NEXT_PUBLIC_* must be set before build)
+ARG NEXT_PUBLIC_API_URL=http://localhost:8080
+ARG NEXT_PUBLIC_ENVIRONMENT=production
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_ENVIRONMENT=$NEXT_PUBLIC_ENVIRONMENT
+
 # Copy package files
 COPY package*.json ./
 

@@ -77,3 +77,6 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
+        build-args: |
+          NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL || 'https://boilerplate-api.ninjafortuna.com' }}
+          NEXT_PUBLIC_ENVIRONMENT=${{ vars.NEXT_PUBLIC_ENVIRONMENT || 'k8s-ninja' }}

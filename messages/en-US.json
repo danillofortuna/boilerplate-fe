@@ -1,0 +1,210 @@
+{
+    "Common": {
+        "save": "Save",
+        "cancel": "Cancel",
+        "saving": "Saving...",
+        "loading": "Loading...",
+        "error": "Error",
+        "success": "Success"
+    },
+    "Validation": {
+        "password": {
+            "minLength": "Password must be at least 8 characters",
+            "maxLength": "Maximum of 100 characters"
+        }
+    },
+    "Navigation": {
+        "dashboard": "Dashboard",
+        "users": "Users",
+        "settings": "Settings",
+        "reports": "Reports",
+        "logout": "Logout",
+        "mainMenu": "Main Menu",
+        "configuration": "Configuration"
+    },
+    "Settings": {
+        "title": "Settings",
+        "save": "Save",
+        "subtitle": "Manage your personal information and preferences",
+        "settingsSaved": "Settings saved successfully",
+        "settingsSaveError": "Error saving settings",
+        "tabs": {
+            "profile": "Profile",
+            "general": "General",
+            "notifications": "Notifications",
+            "subscription": "Subscription",
+            "appearance": "Appearance"
+        },
+        "Appearance": {
+            "themeApplied": "Theme {theme} applied",
+            "modeApplied": "Mode {mode} activated"
+        },
+        "General": {
+            "title": "General",
+            "subtitle": "Regional settings",
+            "language": "Language",
+            "languagePlaceholder": "Select language",
+            "autoSaveMessage": "Your preference will be saved automatically"
+        },
+        "Profile": {
+            "emailLocked": "Email cannot be changed.",
+            "security": "Security",
+            "changePassword": "Change Password",
+            "definePassword": "Define Password",
+            "memberSince": "Member since",
+            "accessLevel": "Access Level",
+            "total": "Full",
+            "restricted": "Restricted",
+            "active": "Active",
+            "inactive": "Inactive",
+            "admin": "Administrator",
+            "user": "User",
+            "removePhoto": "Remove photo",
+            "personalInfo": "Personal Information",
+            "personalInfoDesc": "Update your identification details",
+            "fullName": "Full Name",
+            "namePlaceholder": "Your name",
+            "email": "Email",
+            "emailLockedTooltip": "Email address cannot be changed",
+            "emailLockedFooter": "To change your email, please contact support.",
+            "saveChanges": "Save Changes",
+            "securityLogin": "Security & Login",
+            "securityLoginDesc": "Manage your password and authentication methods",
+            "accessPassword": "Access Password",
+            "activePassword": "Active",
+            "passwordLastChangedRecent": "Your password was last changed recently",
+            "noLocalPassword": "You have not set a local password yet",
+            "googleLinked": "Google Account Linked",
+            "googleLinkedDesc": "You signed in with Google. Set a password to add an alternative login method.",
+            "imageSizeError": "Image must be at most 5MB",
+            "profileUpdated": "Profile updated successfully",
+            "profileUpdateError": "Error updating profile",
+            "imageUpdated": "Profile picture updated",
+            "imageUpdateError": "Error uploading image",
+            "imageRemoved": "Profile picture removed",
+            "imageRemoveError": "Error removing image"
+        }
+    },
+    "Auth": {
+        "Login": {
+            "title": "Boilerplate",
+            "subtitle": "Login to access your account",
+            "backToHome": "Back to Home",
+            "emailLabel": "Email or username",
+            "emailPlaceholder": "Enter your email or username...",
+            "passwordLabel": "Password",
+            "passwordPlaceholder": "••••••••",
+            "submit": "Sign In",
+            "submitting": "Signing In...",
+            "forgotPassword": "Forgot your password?",
+            "noAccount": "Don't have an account?",
+            "signUp": "Sign Up",
+            "copyright": "© {year} Boilerplate. All rights reserved.",
+            "errors": {
+                "emailNotVerified": "Email not verified. Please verify your email before logging in.",
+                "invalidCredentials": "Invalid login or password.",
+                "generic": "Error logging in. Please check your credentials and try again.",
+                "manyAttempts": "Too many attempts",
+                "loginError": "Error signing in"
+            }
+        },
+        "Signup": {
+            "title": "Create Account",
+            "subtitle": "Join Boilerplate today",
+            "backToHome": "Back to Home",
+            "nameLabel": "Full name",
+            "namePlaceholder": "Enter your full name",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Enter your email",
+            "passwordLabel": "Password",
+            "passwordPlaceholder": "Create a secure password",
+            "passwordRequirements": "Password must contain",
+            "passwordMinLength": "At least 8 characters",
+            "passwordNumber": "At least one number",
+            "passwordLowercase": "At least one lowercase letter",
+            "passwordUppercase": "At least one uppercase letter",
+            "passwordSpecialChar": "At least one special character (@#$%^&+=!)",
+            "submit": "Create Account",
+            "submitting": "Creating account...",
+            "hasAccount": "Already have an account?",
+            "signIn": "Sign in",
+            "copyright": "© {year} Boilerplate. All rights reserved.",
+            "errors": {
+                "generic": "Error creating account. Please check the data and try again."
+            }
+        },
+        "Logout": {
+            "success": "Logged out successfully"
+        },
+        "Password": {
+            "success": "Password changed successfully",
+            "error": "Error changing password. Check your current password.",
+            "modalTitle": "Change Password",
+            "modalDescription": "Enter your current password and the new password.",
+            "currentPassword": "Current Password",
+            "currentPasswordPlaceholder": "Enter your current password",
+            "newPassword": "New Password",
+            "newPasswordPlaceholder": "Enter the new password",
+            "confirmPassword": "Confirm New Password",
+            "confirmPasswordPlaceholder": "Enter the new password again",
+            "cancel": "Cancel",
+            "submit": "Change Password"
+        }
+    },
+    "Dashboard": {
+        "title": "Dashboard",
+        "welcome": "Welcome{name}! Here is your account summary.",
+        "cards": {
+            "totalUsers": "Total Users",
+            "totalUsersDesc": "Active users on the platform",
+            "apiRequests": "API Requests",
+            "apiRequestsDesc": "Requests this month",
+            "uptime": "Uptime",
+            "uptimeDesc": "System availability",
+            "status": "Status",
+            "statusDesc": "All services operational",
+            "online": "Online"
+        },
+        "userInfo": {
+            "title": "User Information",
+            "name": "Name:",
+            "email": "Email:",
+            "login": "Login:",
+            "admin": "Admin:",
+            "yes": "Yes",
+            "no": "No",
+            "na": "N/A"
+        }
+    },
+    "Users": {
+        "accessRestricted": "Access Restricted",
+        "noPermission": "You do not have permission to access this page.",
+        "title": "Users",
+        "subtitle": "Manage platform users",
+        "newUser": "New User",
+        "searchPlaceholder": "Search users...",
+        "loading": "Loading users...",
+        "error": "Error loading users",
+        "noUsers": "No users found",
+        "table": {
+            "user": "User",
+            "email": "Email",
+            "status": "Status",
+            "type": "Type",
+            "actions": "Actions"
+        },
+        "status": {
+            "active": "Active",
+            "inactive": "Inactive"
+        },
+        "role": {
+            "admin": "Admin",
+            "user": "User"
+        },
+        "actions": {
+            "edit": "Edit",
+            "changePassword": "Change Password",
+            "deactivate": "Deactivate"
+        }
+    }
+}

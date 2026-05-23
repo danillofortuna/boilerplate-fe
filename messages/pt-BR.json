@@ -1,0 +1,210 @@
+{
+    "Common": {
+        "save": "Salvar",
+        "cancel": "Cancelar",
+        "saving": "Salvando...",
+        "loading": "Carregando...",
+        "error": "Erro",
+        "success": "Sucesso"
+    },
+    "Validation": {
+        "password": {
+            "minLength": "A senha deve ter no mínimo 8 caracteres",
+            "maxLength": "Máximo de 100 caracteres"
+        }
+    },
+    "Navigation": {
+        "dashboard": "Dashboard",
+        "users": "Usuários",
+        "settings": "Configurações",
+        "reports": "Relatórios",
+        "logout": "Sair",
+        "mainMenu": "Menu Principal",
+        "configuration": "Configurações"
+    },
+    "Settings": {
+        "title": "Configurações",
+        "save": "Salvar",
+        "subtitle": "Gerencie suas informações pessoais e preferências",
+        "settingsSaved": "Configurações salvas com sucesso",
+        "settingsSaveError": "Erro ao salvar configurações",
+        "tabs": {
+            "profile": "Perfil",
+            "general": "Geral",
+            "notifications": "Notificações",
+            "subscription": "Assinatura",
+            "appearance": "Aparência"
+        },
+        "Appearance": {
+            "themeApplied": "Tema {theme} aplicado",
+            "modeApplied": "Modo {mode} ativado"
+        },
+        "General": {
+            "title": "Geral",
+            "subtitle": "Configurações regionais",
+            "language": "Idioma",
+            "languagePlaceholder": "Selecione o idioma",
+            "autoSaveMessage": "Sua preferência será salva automaticamente"
+        },
+        "Profile": {
+            "emailLocked": "O email não pode ser alterado.",
+            "security": "Segurança",
+            "changePassword": "Alterar Senha",
+            "definePassword": "Definir Senha",
+            "memberSince": "Membro desde",
+            "accessLevel": "Nível de Acesso",
+            "total": "Total",
+            "restricted": "Restrito",
+            "active": "Ativo",
+            "inactive": "Inativo",
+            "admin": "Administrador",
+            "user": "Usuário",
+            "removePhoto": "Remover foto",
+            "personalInfo": "Informações Pessoais",
+            "personalInfoDesc": "Atualize suas informações de identificação",
+            "fullName": "Nome Completo",
+            "namePlaceholder": "Seu nome",
+            "email": "Email",
+            "emailLockedTooltip": "Endereço de email não pode ser alterado",
+            "emailLockedFooter": "Para alterar seu email, entre em contato com o suporte.",
+            "saveChanges": "Salvar Alterações",
+            "securityLogin": "Segurança & Login",
+            "securityLoginDesc": "Gerencie sua senha e métodos de autenticação",
+            "accessPassword": "Senha de Acesso",
+            "activePassword": "Ativa",
+            "passwordLastChangedRecent": "Sua senha foi alterada pela última vez recentemente",
+            "noLocalPassword": "Você ainda não definiu uma senha local",
+            "googleLinked": "Conta Google Vinculada",
+            "googleLinkedDesc": "Você acessa através de sua conta Google. Defina uma senha para adicionar um método de login alternativo.",
+            "imageSizeError": "A imagem deve ter no máximo 5MB",
+            "profileUpdated": "Perfil atualizado com sucesso",
+            "profileUpdateError": "Erro ao atualizar perfil",
+            "imageUpdated": "Foto de perfil atualizada",
+            "imageUpdateError": "Erro ao enviar imagem",
+            "imageRemoved": "Foto de perfil removida",
+            "imageRemoveError": "Erro ao remover imagem"
+        }
+    },
+    "Auth": {
+        "Login": {
+            "title": "Boilerplate",
+            "subtitle": "Faça login para acessar sua conta",
+            "backToHome": "Voltar ao Início",
+            "emailLabel": "Email ou usuário",
+            "emailPlaceholder": "Digite seu email ou usuário…",
+            "passwordLabel": "Senha",
+            "passwordPlaceholder": "••••••••",
+            "submit": "Entrar",
+            "submitting": "Entrando...",
+            "forgotPassword": "Esqueceu sua senha?",
+            "noAccount": "Não tem uma conta?",
+            "signUp": "Cadastre-se",
+            "copyright": "© {year} Boilerplate. Todos os direitos reservados.",
+            "errors": {
+                "emailNotVerified": "Email não verificado. Verifique seu email antes de fazer login.",
+                "invalidCredentials": "Login ou senha incorretos.",
+                "generic": "Erro ao fazer login. Verifique suas credenciais e tente novamente.",
+                "manyAttempts": "Muitas tentativas",
+                "loginError": "Erro no login"
+            }
+        },
+        "Signup": {
+            "title": "Criar Conta",
+            "subtitle": "Junte-se ao Boilerplate hoje",
+            "backToHome": "Voltar ao Início",
+            "nameLabel": "Nome completo",
+            "namePlaceholder": "Digite seu nome completo",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Digite seu email",
+            "passwordLabel": "Senha",
+            "passwordPlaceholder": "Crie uma senha segura",
+            "passwordRequirements": "A senha deve conter",
+            "passwordMinLength": "No mínimo 8 caracteres",
+            "passwordNumber": "Pelo menos um número",
+            "passwordLowercase": "Pelo menos uma letra minúscula",
+            "passwordUppercase": "Pelo menos uma letra maiúscula",
+            "passwordSpecialChar": "Pelo menos um caractere especial (@#$%^&+=!)",
+            "submit": "Criar Conta",
+            "submitting": "Criando conta...",
+            "hasAccount": "Já tem uma conta?",
+            "signIn": "Faça login",
+            "copyright": "© {year} Boilerplate. Todos os direitos reservados.",
+            "errors": {
+                "generic": "Erro ao criar conta. Verifique os dados e tente novamente."
+            }
+        },
+        "Logout": {
+            "success": "Logout realizado com sucesso"
+        },
+        "Password": {
+            "success": "Senha alterada com sucesso",
+            "error": "Erro ao alterar senha. Verifique sua senha atual.",
+            "modalTitle": "Alterar Senha",
+            "modalDescription": "Digite sua senha atual e a nova senha desejada.",
+            "currentPassword": "Senha Atual",
+            "currentPasswordPlaceholder": "Digite sua senha atual",
+            "newPassword": "Nova Senha",
+            "newPasswordPlaceholder": "Digite a nova senha",
+            "confirmPassword": "Confirmar Nova Senha",
+            "confirmPasswordPlaceholder": "Digite a nova senha novamente",
+            "cancel": "Cancelar",
+            "submit": "Alterar Senha"
+        }
+    },
+    "Dashboard": {
+        "title": "Dashboard",
+        "welcome": "Bem-vindo{name}! Aqui está o resumo da sua conta.",
+        "cards": {
+            "totalUsers": "Total de Usuários",
+            "totalUsersDesc": "Usuários ativos na plataforma",
+            "apiRequests": "Requisições API",
+            "apiRequestsDesc": "Requisições este mês",
+            "uptime": "Uptime",
+            "uptimeDesc": "Disponibilidade do sistema",
+            "status": "Status",
+            "statusDesc": "Todos os serviços operacionais",
+            "online": "Online"
+        },
+        "userInfo": {
+            "title": "Informações do Usuário",
+            "name": "Nome:",
+            "email": "Email:",
+            "login": "Login:",
+            "admin": "Admin:",
+            "yes": "Sim",
+            "no": "Não",
+            "na": "N/A"
+        }
+    },
+    "Users": {
+        "accessRestricted": "Acesso Restrito",
+        "noPermission": "Você não tem permissão para acessar esta página.",
+        "title": "Usuários",
+        "subtitle": "Gerencie os usuários da plataforma",
+        "newUser": "Novo Usuário",
+        "searchPlaceholder": "Buscar usuários...",
+        "loading": "Carregando usuários...",
+        "error": "Erro ao carregar usuários",
+        "noUsers": "Nenhum usuário encontrado",
+        "table": {
+            "user": "Usuário",
+            "email": "Email",
+            "status": "Status",
+            "type": "Tipo",
+            "actions": "Ações"
+        },
+        "status": {
+            "active": "Ativo",
+            "inactive": "Inativo"
+        },
+        "role": {
+            "admin": "Admin",
+            "user": "Usuário"
+        },
+        "actions": {
+            "edit": "Editar",
+            "changePassword": "Alterar Senha",
+            "deactivate": "Desativar"
+        }
+    }
+}

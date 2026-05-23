@@ -1,0 +1,38 @@
+---
+description: Deploy applications to Vercel instantly without authentication.
+globs: **/*
+---
+
+# Vercel Deploy Skill
+
+Deploy any project to Vercel instantly. No authentication required. This returns a preview URL and a claim URL.
+
+## Usage
+
+When asked to "Deploy", "Push to production", or "Preview", use the following steps:
+
+1.  **Prepare Package**: Create a tarball of the project, excluding `node_modules` and `.git`.
+    ```powershell
+    tar -czf project.tgz --exclude=node_modules --exclude=.git .
+    ```
+
+2.  **Detect Framework**: Identify the framework from `package.json` (e.g., `nextjs`, `react`, `vue`, `svelte`).
+    - If `next`, use `nextjs`.
+    - If `react-scripts`, use `create-react-app`.
+    - (See full list in standard Vercel docs).
+
+3.  **Upload & Deploy**: Send the package to the deployment endpoint.
+    ```powershell
+    curl -X POST "https://claude-skills-deploy.vercel.com/api/deploy" -F "file=@project.tgz" -F "framework=nextjs"
+    ```
+
+4.  **Report Results**: The response will contain JSON.
+    ```json
+    {
+      "previewUrl": "https://...",
+      "claimUrl": "https://..."
+    }
+    ```
+    Present both URLs to the user clearly.
+
+5.  **Cleanup**: Delete `project.tgz` after successful deployment.

@@ -1,0 +1,808 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-outfit);
+  --font-mono: var(--font-geist-mono);
+  --font-outfit: var(--font-outfit);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --animate-shine: shine var(--duration) infinite linear;
+
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+
+    50% {
+      background-position: 100% 100%;
+    }
+
+    to {
+      background-position: 0% 0%;
+    }
+  }
+}
+
+/* As cores do tema serão aplicadas dinamicamente pelo CustomThemeProvider */
+/* Tema padrão (Modern) para evitar flash de conteúdo sem estilo */
+:root {
+  /* Essas variáveis serão sobrescritas pelo tema selecionado */
+  --radius: 0.5rem;
+  --tracking-normal: 0.025em;
+
+  /* Tema Modern - Modo Claro (padrão) */
+  --background: oklch(0.9911 0 0);
+  --foreground: oklch(0.2046 0 0);
+  --card: oklch(0.9911 0 0);
+  --card-foreground: oklch(0.2046 0 0);
+  --popover: oklch(0.9911 0 0);
+  --popover-foreground: oklch(0.4386 0 0);
+  --primary: oklch(0.8348 0.1302 160.9080);
+  --primary-foreground: oklch(0.2626 0.0147 166.4589);
+  --secondary: oklch(0.9940 0 0);
+  --secondary-foreground: oklch(0.2046 0 0);
+  --muted: oklch(0.9461 0 0);
+  --muted-foreground: oklch(0.2435 0 0);
+  --accent: oklch(0.9461 0 0);
+  --accent-foreground: oklch(0.2435 0 0);
+  --destructive: oklch(0.5523 0.1927 32.7272);
+  --destructive-foreground: oklch(0.9934 0.0032 17.2118);
+  --border: oklch(0.9037 0 0);
+  --input: oklch(0.9731 0 0);
+  --ring: oklch(0.8348 0.1302 160.9080);
+  --chart-1: oklch(0.8348 0.1302 160.9080);
+  --chart-2: oklch(0.6231 0.1880 259.8145);
+  --chart-3: oklch(0.6056 0.2189 292.7172);
+  --chart-4: oklch(0.7686 0.1647 70.0804);
+  --chart-5: oklch(0.6959 0.1491 162.4796);
+  --sidebar: oklch(0.9911 0 0);
+  --sidebar-foreground: oklch(0.5452 0 0);
+  --sidebar-primary: oklch(0.8348 0.1302 160.9080);
+  --sidebar-primary-foreground: oklch(0.2626 0.0147 166.4589);
+  --sidebar-accent: oklch(0.9461 0 0);
+  --sidebar-accent-foreground: oklch(0.2435 0 0);
+  --sidebar-border: oklch(0.9037 0 0);
+  --sidebar-ring: oklch(0.8348 0.1302 160.9080);
+
+  /* Fontes */
+  --font-sans: var(--font-outfit), system-ui, -apple-system, sans-serif;
+}
+
+/* Tema Modern - Modo Escuro */
+.dark {
+  --background: oklch(0.1822 0 0);
+  --foreground: oklch(0.9288 0.0126 255.5078);
+  --card: oklch(0.2046 0 0);
+  --card-foreground: oklch(0.9288 0.0126 255.5078);
+  --popover: oklch(0.2603 0 0);
+  --popover-foreground: oklch(0.7348 0 0);
+  --primary: oklch(0.4365 0.1044 156.7556);
+  --primary-foreground: oklch(0.9213 0.0135 167.1556);
+  --secondary: oklch(0.2603 0 0);
+  --secondary-foreground: oklch(0.9851 0 0);
+  --muted: oklch(0.2393 0 0);
+  --muted-foreground: oklch(0.7122 0 0);
+  --accent: oklch(0.3132 0 0);
+  --accent-foreground: oklch(0.9851 0 0);
+  --destructive: oklch(0.3123 0.0852 29.7877);
+  --destructive-foreground: oklch(0.9368 0.0045 34.3092);
+  --border: oklch(0.2809 0 0);
+  --input: oklch(0.2603 0 0);
+  --ring: oklch(0.8003 0.1821 151.7110);
+  --chart-1: oklch(0.8003 0.1821 151.7110);
+  --chart-2: oklch(0.7137 0.1434 254.6240);
+  --chart-3: oklch(0.7090 0.1592 293.5412);
+  --chart-4: oklch(0.8369 0.1644 84.4286);
+  --chart-5: oklch(0.7845 0.1325 181.9120);
+  --sidebar: oklch(0.1822 0 0);
+  --sidebar-foreground: oklch(0.6301 0 0);
+  --sidebar-primary: oklch(0.4365 0.1044 156.7556);
+  --sidebar-primary-foreground: oklch(0.9213 0.0135 167.1556);
+  --sidebar-accent: oklch(0.3132 0 0);
+  --sidebar-accent-foreground: oklch(0.9851 0 0);
+  --sidebar-border: oklch(0.2809 0 0);
+  --sidebar-ring: oklch(0.8003 0.1821 151.7110);
+
+  /* Fontes */
+  --font-sans: var(--font-outfit), system-ui, -apple-system, sans-serif;
+}
+
+/* Estrutura base para temas customizados */
+[data-theme] {
+  transition: none;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Configuração das fontes */
+.font-outfit {
+  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
+}
+
+/* Aplicar Outfit como fonte padrão em todos os elementos */
+html,
+body,
+* {
+  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif !important;
+}
+
+/* Manter font-mono para elementos de código */
+code,
+pre,
+.font-mono {
+  font-family: var(--font-geist-mono), monospace !important;
+}
+
+/* Animações personalizadas */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.8);
+  }
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Scrollbar simples e limpa */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
+}
+
+/* Scrollbar elegante e moderno */
+.scrollbar-elegant {
+  scrollbar-width: thin;
+  /* Firefox */
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  /* Firefox */
+}
+
+/* Chrome, Safari, Edge - Scrollbar moderno */
+.scrollbar-elegant::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.scrollbar-elegant::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 4px;
+}
+
+.scrollbar-elegant::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  transition: all 0.3s ease;
+}
+
+/* Efeito hover suave */
+.scrollbar-elegant::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Clicando no scrollbar */
+.scrollbar-elegant::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Tema escuro - cores ajustadas */
+.dark .scrollbar-elegant {
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  /* Firefox dark */
+}
+
+.dark .scrollbar-elegant::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.dark .scrollbar-elegant::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.dark .scrollbar-elegant::-webkit-scrollbar-thumb:active {
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Animação suave ao aparecer */
+.scrollbar-elegant:hover::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.dark .scrollbar-elegant:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* OverlayScrollbars Customization */
+.os-scrollbar {
+  --os-size: 10px;
+  --os-padding-perpendicular: 0px;
+  --os-padding-axis: 0px;
+  --os-track-border-radius: 10px;
+  --os-handle-border-radius: 10px;
+  --os-handle-bg: rgba(0, 0, 0, 0.3);
+  --os-handle-bg-hover: rgba(0, 0, 0, 0.5);
+  --os-handle-bg-active: rgba(0, 0, 0, 0.7);
+}
+
+.dark .os-scrollbar {
+  --os-handle-bg: rgba(255, 255, 255, 0.3);
+  --os-handle-bg-hover: rgba(255, 255, 255, 0.5);
+  --os-handle-bg-active: rgba(255, 255, 255, 0.7);
+}
+
+.os-scrollbar-handle {
+  background: var(--os-handle-bg) !important;
+  border: none !important;
+}
+
+.os-scrollbar-handle:hover {
+  background: var(--os-handle-bg-hover) !important;
+}
+
+.os-scrollbar-handle:active {
+  background: var(--os-handle-bg-active) !important;
+}
+
+.os-scrollbar-track {
+  background: transparent !important;
+}
+
+/* Animação suave */
+.os-scrollbar-handle {
+  transition: background 0.2s ease, opacity 0.2s ease !important;
+}
+
+/* Auto-hide mais suave */
+.os-scrollbar-auto-hide .os-scrollbar {
+  opacity: 0;
+  transition: opacity 0.3s ease !important;
+}
+
+.os-scrollbar-auto-hide:hover .os-scrollbar,
+.os-scrollbar-auto-hide.os-scrollbar-visible .os-scrollbar {
+  opacity: 1;
+}
+
+/* Remover padding desnecessário */
+.os-padding {
+  display: none !important;
+}
+
+/* Estilo mais moderno com borda suave */
+.os-theme-dark .os-scrollbar-handle,
+.os-theme-light .os-scrollbar-handle {
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.3)) !important;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.dark .os-theme-dark .os-scrollbar-handle,
+.dark .os-theme-light .os-scrollbar-handle {
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.2)) !important;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Landing Page Patterns */
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Gradient text animation */
+  @keyframes gradient-shift {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Floating animation */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    33% {
+      transform: translateY(-10px) rotate(-1deg);
+    }
+
+    66% {
+      transform: translateY(5px) rotate(1deg);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Pulse animation */
+  @keyframes pulse-border {
+
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+    }
+
+    50% {
+      box-shadow: 0 0 0 8px hsl(var(--primary) / 0);
+    }
+  }
+
+  .animate-pulse-border {
+    animation: pulse-border 2s ease-in-out infinite;
+  }
+
+  /* Blur animation for backgrounds */
+  @keyframes blur-in {
+    from {
+      filter: blur(20px);
+      opacity: 0;
+    }
+
+    to {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-blur-in {
+    animation: blur-in 1s ease-out forwards;
+  }
+
+  /* Custom shadow utilities */
+  .shadow-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2),
+      0 0 40px hsl(var(--primary) / 0.1);
+  }
+
+  .shadow-glow-hover:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3),
+      0 0 60px hsl(var(--primary) / 0.2);
+  }
+
+  /* Dark mode specific gradients */
+  .dark .gradient-dark {
+    background: linear-gradient(135deg,
+        hsl(var(--primary) / 0.1) 0%,
+        transparent 50%,
+        hsl(var(--primary) / 0.05) 100%);
+  }
+
+  /* Mobile touch feedback */
+  @media (hover: none) {
+    .touch-scale:active {
+      transform: scale(0.95);
+    }
+  }
+
+  /* Smooth transitions for theme changes */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Disable transitions on theme change to prevent flash */
+  html.no-transitions * {
+    transition: none !important;
+  }
+
+  /* Magic UI Animations */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee var(--duration) linear infinite;
+  }
+
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration) linear infinite;
+  }
+
+  @keyframes border-beam {
+    from {
+      offset-distance: 0%;
+    }
+
+    to {
+      offset-distance: 100%;
+    }
+  }
+
+  .animate-border-beam {
+    animation: border-beam var(--duration) infinite linear;
+  }
+
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
+  }
+
+  .animate-meteor {
+    animation: meteor var(--duration) linear infinite;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  .animate-slide {
+    animation: slide 3s linear infinite;
+  }
+
+  @keyframes spin-around {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-around {
+    animation: spin-around calc(var(--speed) * 2) infinite linear;
+  }
+
+  /* Orbiting animation */
+  @keyframes orbit {
+    from {
+      transform: rotate(0deg) translateX(var(--radius)) rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg);
+    }
+  }
+
+  .animate-orbit {
+    animation: orbit var(--duration) linear infinite;
+  }
+
+  /* Rainbow Button Animation */
+  @keyframes rainbow {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes theme-rainbow {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-theme-rainbow {
+    animation: theme-rainbow 4s ease-in-out infinite;
+    background-size: 300% 100%;
+    background-image: linear-gradient(90deg,
+        hsl(var(--primary)),
+        hsl(var(--chart-1)),
+        hsl(var(--primary)),
+        hsl(var(--chart-2)),
+        hsl(var(--chart-3)),
+        hsl(var(--primary)),
+        hsl(var(--chart-4)),
+        hsl(var(--chart-5)),
+        hsl(var(--primary))) !important;
+  }
+
+  .animate-rainbow:before {
+    animation: rainbow 3s ease-in-out infinite;
+  }
+
+  /* Animation delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+}
+
+/* Scroll suave global */
+html {
+  scroll-behavior: smooth;
+  overflow-y: auto !important;
+  height: auto !important;
+}
+
+body {
+  overflow-y: auto !important;
+  height: auto !important;
+  min-height: 100vh;
+}
+
+/* Offset para compensar navbar fixa */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Animação para os cards de resumo */
+@keyframes scaleIn {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Mostrar ícone de anexo no hover da linha da tabela */
+tr:hover .attachment-icon-hover {
+  opacity: 1 !important;
+}
+
+/* Scrollbar style for overflow-y-auto elements */
+.scrollbar-beautiful::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-beautiful::-webkit-scrollbar-track {
+  background: hsl(var(--muted) / 0.5);
+  border-radius: 4px;
+}
+
+.scrollbar-beautiful::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.scrollbar-beautiful::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* OverlayScrollbars theme customization */
+.os-theme-dark,
+.os-theme-light {
+  --os-size: 8px;
+  --os-padding-perpendicular: 2px;
+  --os-padding-axis: 2px;
+  --os-track-border-radius: 4px;
+  --os-handle-interactive-area-offset: 0px;
+  --os-handle-border-radius: 4px;
+}
+
+.os-theme-dark.os-scrollbar {
+  --os-handle-bg: hsl(var(--muted-foreground) / 0.3);
+  --os-handle-bg-hover: hsl(var(--muted-foreground) / 0.5);
+  --os-handle-bg-active: hsl(var(--muted-foreground) / 0.6);
+  --os-track-bg: hsl(var(--muted) / 0.5);
+}
+
+.os-theme-light.os-scrollbar {
+  --os-handle-bg: hsl(var(--muted-foreground) / 0.3);
+  --os-handle-bg-hover: hsl(var(--muted-foreground) / 0.5);
+  --os-handle-bg-active: hsl(var(--muted-foreground) / 0.6);
+  --os-track-bg: hsl(var(--muted) / 0.5);
+}
+
+/* RainbowButton animation that uses theme colors */
+@keyframes rainbow-slide {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+
+  /* Simplifica animações no mobile */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+
+  /* Remove transformações complexas */
+  .transform-gpu {
+    transform: none !important;
+  }
+
+  /* Simplifica blur effects */
+  .blur-\[0\.5px\] {
+    filter: none !important;
+  }
+
+  /* Reduz motion para economizar bateria */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}

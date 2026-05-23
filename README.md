@@ -1,5 +1,6 @@
 # ⚛️ Boilerplate React 2026
 
+[![CI](https://github.com/danillofortuna/boilerplate-fe/workflows/CI/badge.svg)](https://github.com/danillofortuna/boilerplate-fe/actions/workflows/ci.yml)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)

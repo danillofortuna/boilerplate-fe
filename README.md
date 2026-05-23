@@ -107,3 +107,4 @@ src/
   Feito com ⚛️ para a comunidade React
 </p>
 # Test change
+# Trigger new build for public image
